@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260">
+
+  <defs>
+    <linearGradient id="pawGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffcad4"/>
+      <stop offset="100%" style="stop-color:#f4acb7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Central paw print -->
+  <g transform="translate(200, 72) scale(1.35)">
+    <!-- Toe pads -->
+    <ellipse cx="-30" cy="-14" rx="11" ry="13" fill="url(#pawGrad)" transform="rotate(-12 -30 -14)"/>
+    <ellipse cx="-10" cy="-28" rx="10" ry="12" fill="url(#pawGrad)" transform="rotate(-4 -10 -28)"/>
+    <ellipse cx="12" cy="-28" rx="10" ry="12" fill="url(#pawGrad)" transform="rotate(4 12 -28)"/>
+    <ellipse cx="32" cy="-14" rx="11" ry="13" fill="url(#pawGrad)" transform="rotate(12 32 -14)"/>
+    <!-- Main pad -->
+    <ellipse cx="1" cy="14" rx="26" ry="28" fill="url(#pawGrad)"/>
+    <!-- Heart inside main pad -->
+    <path d="M1 8 C-4 1, -14 4, -14 13 C-14 20, 1 30, 1 30 C1 30, 16 20, 16 13 C16 4, 6 1, 1 8Z" fill="#ffe5d9" opacity="0.75"/>
+  </g>
+
+  <!-- Sparkle dots -->
+  <circle cx="122" cy="34" r="4" fill="#ffcad4" opacity="0.5"/>
+  <circle cx="278" cy="28" r="4.5" fill="#f4acb7" opacity="0.45"/>
+  <circle cx="108" cy="62" r="3" fill="#ffe5d9" opacity="0.6"/>
+  <circle cx="292" cy="68" r="3" fill="#ffe5d9" opacity="0.6"/>
+  <circle cx="132" cy="90" r="2.5" fill="#ffcad4" opacity="0.4"/>
+  <circle cx="268" cy="94" r="2.5" fill="#ffcad4" opacity="0.4"/>
+
+  <!-- Small star sparkles -->
+  <text x="112" y="50" font-size="13" fill="#f4acb7" opacity="0.45">&#10022;</text>
+  <text x="280" y="46" font-size="11" fill="#ffcad4" opacity="0.5">&#10022;</text>
+  <text x="138" y="105" font-size="10" fill="#ffe5d9" opacity="0.5">&#10022;</text>
+  <text x="256" y="108" font-size="10" fill="#ffe5d9" opacity="0.5">&#10022;</text>
+
+  <!-- Wonder Paws text -->
+  <!-- Soft outline -->
+  <text x="200" y="198" text-anchor="middle" font-family="Verdana, sans-serif" font-size="52" font-weight="bold" fill="none" stroke="#ffcad4" stroke-width="8" stroke-linejoin="round">Wonder Paws</text>
+  <!-- Main text -->
+  <text x="200" y="198" text-anchor="middle" font-family="Verdana, sans-serif" font-size="52" font-weight="bold" fill="#9d8189">Wonder Paws</text>
+
+  <!-- Mini paw accent left -->
+  <g transform="translate(52, 182) scale(0.24) rotate(-15)">
+    <ellipse cx="0" cy="14" rx="20" ry="22" fill="#f4acb7" opacity="0.35"/>
+    <circle cx="-22" cy="-8" r="9" fill="#f4acb7" opacity="0.35"/>
+    <circle cx="-7" cy="-20" r="8" fill="#f4acb7" opacity="0.35"/>
+    <circle cx="9" cy="-20" r="8" fill="#f4acb7" opacity="0.35"/>
+    <circle cx="24" cy="-8" r="9" fill="#f4acb7" opacity="0.35"/>
+  </g>
+
+  <!-- Mini paw accent right -->
+  <g transform="translate(348, 182) scale(0.24) rotate(12)">
+    <ellipse cx="0" cy="14" rx="20" ry="22" fill="#f4acb7" opacity="0.35"/>
+    <circle cx="-22" cy="-8" r="9" fill="#f4acb7" opacity="0.35"/>
+    <circle cx="-7" cy="-20" r="8" fill="#f4acb7" opacity="0.35"/>
+    <circle cx="9" cy="-20" r="8" fill="#f4acb7" opacity="0.35"/>
+    <circle cx="24" cy="-8" r="9" fill="#f4acb7" opacity="0.35"/>
+  </g>
+
+  <!-- Subtitle -->
+  <text x="200" y="238" text-anchor="middle" font-family="Verdana, sans-serif" font-size="14" fill="#9d8189" opacity="0.45" letter-spacing="3">Elle &amp; Norah</text>
+
+</svg>

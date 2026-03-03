@@ -1,0 +1,501 @@
+<html>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #d8e2dc;
+    font-family: Verdana, sans-serif;
+    color: #333;
+  }
+
+  nav {
+    background-color: #9d8189;
+    padding: 10px;
+    text-align: center;
+  }
+
+  nav a {
+    margin: 10px;
+    color: #ffe5d9;
+    font-family: Verdana;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    color: white;
+  }
+
+  .page-title {
+    text-align: center;
+    font-family: Georgia, serif;
+    color: #9d8189;
+    font-size: 36px;
+    margin: 40px 0 10px;
+  }
+
+  .page-subtitle {
+    text-align: center;
+    color: #9d8189;
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+
+  .section {
+    max-width: 900px;
+    margin: 0 auto 50px;
+    padding: 0 20px;
+  }
+
+  .section-title {
+    font-family: Georgia, serif;
+    color: #9d8189;
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f4acb7;
+  }
+
+  /* --- Colour Palette --- */
+  .colour-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .colour-card {
+    width: 160px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .colour-swatch {
+    height: 120px;
+  }
+
+  .colour-info {
+    padding: 12px;
+    text-align: center;
+  }
+
+  .colour-name {
+    font-size: 13px;
+    font-weight: bold;
+    color: #9d8189;
+    margin-bottom: 4px;
+  }
+
+  .colour-hex {
+    font-size: 12px;
+    color: #888;
+    font-family: Consolas, monospace;
+    cursor: pointer;
+    padding: 2px 8px;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+
+  .colour-hex:hover {
+    background: #f0f0f0;
+  }
+
+  .colour-hex.copied {
+    background: #d8e2dc;
+    color: #9d8189;
+  }
+
+  /* --- Font Specimens --- */
+  .font-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .font-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .font-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+  }
+
+  .font-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #9d8189;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .font-family-name {
+    font-size: 12px;
+    color: #aaa;
+    font-family: Consolas, monospace;
+  }
+
+  .font-preview-large {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .font-preview-body {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.7;
+  }
+
+  .font-weights {
+    display: flex;
+    gap: 20px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #eee;
+    flex-wrap: wrap;
+  }
+
+  .font-weight-sample {
+    font-size: 14px;
+    color: #999;
+  }
+
+  /* --- Colour Combos --- */
+  .combo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .combo-card {
+    width: 260px;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .combo-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+
+  .combo-body {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .combo-label {
+    font-size: 11px;
+    margin-top: 12px;
+    opacity: 0.6;
+    font-family: Consolas, monospace;
+  }
+
+  /* --- Spacing & Utilities --- */
+  .spacing-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  .spacing-block {
+    background: #f4acb7;
+    border-radius: 4px;
+    height: 24px;
+  }
+
+  .spacing-label {
+    font-size: 12px;
+    color: #888;
+    font-family: Consolas, monospace;
+    min-width: 60px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    color: #9d8189;
+    font-size: 12px;
+    margin-top: 20px;
+  }
+</style>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="page1.html">About Me</a>
+  <a href="page2.html">Fun Stuff</a>
+  <a href="page3.html">Contact Me</a>
+</nav>
+
+<h1 class="page-title">Style Guide</h1>
+<p class="page-subtitle">Colours, fonts, and the building blocks of Elle's site</p>
+
+<!-- Colour Palette -->
+<div class="section">
+  <h2 class="section-title">Colour Palette</h2>
+  <div class="colour-grid">
+
+    <div class="colour-card">
+      <div class="colour-swatch" style="background-color: #d8e2dc;"></div>
+      <div class="colour-info">
+        <div class="colour-name">Alabaster Grey</div>
+        <div class="colour-hex" onclick="copyHex(this)" title="Click to copy">#d8e2dc</div>
+      </div>
+    </div>
+
+    <div class="colour-card">
+      <div class="colour-swatch" style="background-color: #ffe5d9;"></div>
+      <div class="colour-info">
+        <div class="colour-name">Powder Petal</div>
+        <div class="colour-hex" onclick="copyHex(this)" title="Click to copy">#ffe5d9</div>
+      </div>
+    </div>
+
+    <div class="colour-card">
+      <div class="colour-swatch" style="background-color: #ffcad4;"></div>
+      <div class="colour-info">
+        <div class="colour-name">Pastel Pink</div>
+        <div class="colour-hex" onclick="copyHex(this)" title="Click to copy">#ffcad4</div>
+      </div>
+    </div>
+
+    <div class="colour-card">
+      <div class="colour-swatch" style="background-color: #f4acb7;"></div>
+      <div class="colour-info">
+        <div class="colour-name">Cherry Blossom</div>
+        <div class="colour-hex" onclick="copyHex(this)" title="Click to copy">#f4acb7</div>
+      </div>
+    </div>
+
+    <div class="colour-card">
+      <div class="colour-swatch" style="background-color: #9d8189;"></div>
+      <div class="colour-info">
+        <div class="colour-name">Dusty Mauve</div>
+        <div class="colour-hex" onclick="copyHex(this)" title="Click to copy">#9d8189</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Font Options -->
+<div class="section">
+  <h2 class="section-title">Font Options</h2>
+  <p style="font-size: 13px; color: #888; margin-bottom: 20px;">A few font pairings to try. Pick what feels right for Elle's vibe.</p>
+
+  <div class="font-grid">
+
+    <div class="font-card">
+      <div class="font-header">
+        <span class="font-label">Option 1: Current</span>
+        <span class="font-family-name">Verdana</span>
+      </div>
+      <div class="font-preview-large" style="font-family: Verdana, sans-serif;">
+        The quick brown fox jumps over the lazy dog
+      </div>
+      <div class="font-preview-body" style="font-family: Verdana, sans-serif;">
+        Clean and easy to read at any size. Great for body text. This is what the site uses right now.
+      </div>
+      <div class="font-weights">
+        <span class="font-weight-sample" style="font-family: Verdana; font-weight: normal;">Regular</span>
+        <span class="font-weight-sample" style="font-family: Verdana; font-weight: bold;">Bold</span>
+      </div>
+    </div>
+
+    <div class="font-card">
+      <div class="font-header">
+        <span class="font-label">Option 2: Serif Headings</span>
+        <span class="font-family-name">Georgia + Verdana</span>
+      </div>
+      <div class="font-preview-large" style="font-family: Georgia, serif;">
+        The quick brown fox jumps over the lazy dog
+      </div>
+      <div class="font-preview-body" style="font-family: Verdana, sans-serif;">
+        Georgia for headings gives a slightly more elegant feel. Paired with Verdana body text for readability.
+      </div>
+      <div class="font-weights">
+        <span class="font-weight-sample" style="font-family: Georgia; font-weight: normal;">Georgia Regular</span>
+        <span class="font-weight-sample" style="font-family: Georgia; font-weight: bold;">Georgia Bold</span>
+        <span class="font-weight-sample" style="font-family: Georgia; font-style: italic;">Georgia Italic</span>
+      </div>
+    </div>
+
+    <div class="font-card">
+      <div class="font-header">
+        <span class="font-label">Option 3: Playful</span>
+        <span class="font-family-name">Comic Sans MS</span>
+      </div>
+      <div class="font-preview-large" style="font-family: 'Comic Sans MS', cursive;">
+        The quick brown fox jumps over the lazy dog
+      </div>
+      <div class="font-preview-body" style="font-family: 'Comic Sans MS', cursive;">
+        Fun and casual. Matches the playful energy of the site perfectly. Not everyone's cup of tea, but Elle's site isn't for everyone.
+      </div>
+      <div class="font-weights">
+        <span class="font-weight-sample" style="font-family: 'Comic Sans MS'; font-weight: normal;">Regular</span>
+        <span class="font-weight-sample" style="font-family: 'Comic Sans MS'; font-weight: bold;">Bold</span>
+      </div>
+    </div>
+
+    <div class="font-card">
+      <div class="font-header">
+        <span class="font-label">Option 4: Modern</span>
+        <span class="font-family-name">Segoe UI</span>
+      </div>
+      <div class="font-preview-large" style="font-family: 'Segoe UI', sans-serif;">
+        The quick brown fox jumps over the lazy dog
+      </div>
+      <div class="font-preview-body" style="font-family: 'Segoe UI', sans-serif;">
+        Clean, modern, and friendly. Slightly softer than Verdana. Works well at all sizes and has lots of weight options.
+      </div>
+      <div class="font-weights">
+        <span class="font-weight-sample" style="font-family: 'Segoe UI'; font-weight: 300;">Light</span>
+        <span class="font-weight-sample" style="font-family: 'Segoe UI'; font-weight: normal;">Regular</span>
+        <span class="font-weight-sample" style="font-family: 'Segoe UI'; font-weight: 600;">Semi Bold</span>
+        <span class="font-weight-sample" style="font-family: 'Segoe UI'; font-weight: bold;">Bold</span>
+      </div>
+    </div>
+
+    <div class="font-card">
+      <div class="font-header">
+        <span class="font-label">Option 5: Rounded</span>
+        <span class="font-family-name">Trebuchet MS</span>
+      </div>
+      <div class="font-preview-large" style="font-family: 'Trebuchet MS', sans-serif;">
+        The quick brown fox jumps over the lazy dog
+      </div>
+      <div class="font-preview-body" style="font-family: 'Trebuchet MS', sans-serif;">
+        Slightly quirky and rounded. Feels friendly and approachable without being too informal. A good middle ground.
+      </div>
+      <div class="font-weights">
+        <span class="font-weight-sample" style="font-family: 'Trebuchet MS'; font-weight: normal;">Regular</span>
+        <span class="font-weight-sample" style="font-family: 'Trebuchet MS'; font-weight: bold;">Bold</span>
+        <span class="font-weight-sample" style="font-family: 'Trebuchet MS'; font-style: italic;">Italic</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Colour Combinations -->
+<div class="section">
+  <h2 class="section-title">Colour Combinations</h2>
+  <p style="font-size: 13px; color: #888; margin-bottom: 20px;">How the colours look together as backgrounds and text.</p>
+
+  <div class="combo-grid">
+
+    <div class="combo-card" style="background-color: #9d8189; color: #ffe5d9;">
+      <div class="combo-heading">Heading Text</div>
+      <div class="combo-body">Body text sits here to show how it reads on this background.</div>
+      <div class="combo-label">Dusty Mauve bg + Powder Petal text</div>
+    </div>
+
+    <div class="combo-card" style="background-color: #ffe5d9; color: #9d8189;">
+      <div class="combo-heading">Heading Text</div>
+      <div class="combo-body">Body text sits here to show how it reads on this background.</div>
+      <div class="combo-label">Powder Petal bg + Dusty Mauve text</div>
+    </div>
+
+    <div class="combo-card" style="background-color: #ffcad4; color: #9d8189;">
+      <div class="combo-heading">Heading Text</div>
+      <div class="combo-body">Body text sits here to show how it reads on this background.</div>
+      <div class="combo-label">Pastel Pink bg + Dusty Mauve text</div>
+    </div>
+
+    <div class="combo-card" style="background-color: white; color: #9d8189; border: 1px solid #d8e2dc;">
+      <div class="combo-heading">Heading Text</div>
+      <div class="combo-body" style="color: #555;">Body text sits here to show how it reads on this background.</div>
+      <div class="combo-label">White bg + Dusty Mauve heading</div>
+    </div>
+
+    <div class="combo-card" style="background-color: #d8e2dc; color: #9d8189;">
+      <div class="combo-heading">Heading Text</div>
+      <div class="combo-body" style="color: #555;">Body text sits here to show how it reads on this background.</div>
+      <div class="combo-label">Alabaster Grey bg + Dusty Mauve heading</div>
+    </div>
+
+    <div class="combo-card" style="background-color: #f4acb7; color: white;">
+      <div class="combo-heading">Heading Text</div>
+      <div class="combo-body">Body text sits here to show how it reads on this background.</div>
+      <div class="combo-label">Cherry Blossom bg + White text</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Spacing Reference -->
+<div class="section">
+  <h2 class="section-title">Spacing Scale</h2>
+  <div style="background: white; border-radius: 12px; padding: 24px 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+    <div class="spacing-row">
+      <span class="spacing-label">4px</span>
+      <div class="spacing-block" style="width: 4px;"></div>
+    </div>
+    <div class="spacing-row">
+      <span class="spacing-label">8px</span>
+      <div class="spacing-block" style="width: 8px;"></div>
+    </div>
+    <div class="spacing-row">
+      <span class="spacing-label">12px</span>
+      <div class="spacing-block" style="width: 12px;"></div>
+    </div>
+    <div class="spacing-row">
+      <span class="spacing-label">16px</span>
+      <div class="spacing-block" style="width: 16px;"></div>
+    </div>
+    <div class="spacing-row">
+      <span class="spacing-label">20px</span>
+      <div class="spacing-block" style="width: 20px;"></div>
+    </div>
+    <div class="spacing-row">
+      <span class="spacing-label">24px</span>
+      <div class="spacing-block" style="width: 24px;"></div>
+    </div>
+    <div class="spacing-row">
+      <span class="spacing-label">32px</span>
+      <div class="spacing-block" style="width: 32px;"></div>
+    </div>
+    <div class="spacing-row">
+      <span class="spacing-label">48px</span>
+      <div class="spacing-block" style="width: 48px;"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Elle's Style Guide
+</footer>
+
+<script>
+  function copyHex(el) {
+    navigator.clipboard.writeText(el.textContent).then(function() {
+      el.classList.add('copied');
+      var original = el.textContent;
+      el.textContent = 'Copied!';
+      setTimeout(function() {
+        el.textContent = original;
+        el.classList.remove('copied');
+      }, 1200);
+    });
+  }
+</script>
+
+</html>
