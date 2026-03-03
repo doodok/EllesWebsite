@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wonder Paws | Elle & Norah</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --alabaster: #d8e2dc;
+      --powder: #ffe5d9;
+      --pastel: #ffcad4;
+      --cherry: #f4acb7;
+      --mauve: #9d8189;
+      --white: #ffffff;
+      --dark: #4a3740;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--alabaster);
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 36'%3E%3Cellipse cx='16' cy='24' rx='6' ry='7' fill='white' opacity='0.45'/%3E%3Ccircle cx='6' cy='12' r='3' fill='white' opacity='0.45'/%3E%3Ccircle cx='12' cy='8' r='2.8' fill='white' opacity='0.45'/%3E%3Ccircle cx='20' cy='8' r='2.8' fill='white' opacity='0.45'/%3E%3Ccircle cx='26' cy='12' r='3' fill='white' opacity='0.45'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 36'%3E%3Cellipse cx='16' cy='24' rx='6' ry='7' fill='%23f4acb7' opacity='0.35'/%3E%3Ccircle cx='6' cy='12' r='3' fill='%23f4acb7' opacity='0.35'/%3E%3Ccircle cx='12' cy='8' r='2.8' fill='%23f4acb7' opacity='0.35'/%3E%3Ccircle cx='20' cy='8' r='2.8' fill='%23f4acb7' opacity='0.35'/%3E%3Ccircle cx='26' cy='12' r='3' fill='%23f4acb7' opacity='0.35'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 36'%3E%3Cellipse cx='16' cy='24' rx='6' ry='7' fill='white' opacity='0.45'/%3E%3Ccircle cx='6' cy='12' r='3' fill='white' opacity='0.45'/%3E%3Ccircle cx='12' cy='8' r='2.8' fill='white' opacity='0.45'/%3E%3Ccircle cx='20' cy='8' r='2.8' fill='white' opacity='0.45'/%3E%3Ccircle cx='26' cy='12' r='3' fill='white' opacity='0.45'/%3E%3C/svg%3E");
+      background-size: 70px 79px, 100px 113px, 160px 180px;
+      background-position: 0 0, 40px 40px, 100px 20px;
+      animation: pawDrift 3s infinite alternate;
+      font-family: Verdana, sans-serif;
+      overflow-x: hidden;
+    }
+
+    @keyframes pawDrift {
+      0% { background-position: 0 0, 40px 40px, 100px 20px; }
+      50% { background-position: 10px 10px, 50px 30px, 90px 30px; }
+      100% { background-position: 0 0, 40px 40px, 100px 20px; }
+    }
+
+    /* ============ NAV ============ */
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      padding: 14px 20px;
+      background: var(--mauve);
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-family: 'Fredoka', Verdana, sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--powder);
+      text-decoration: none;
+      padding: 7px 18px;
+      border-radius: 50px;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: scale(1.06);
+    }
+
+    nav a.active {
+      background: var(--cherry);
+      color: white;
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      text-align: center;
+      padding: 40px 20px 20px;
+      position: relative;
+    }
+
+    .hero-logo {
+      width: 200px;
+      animation: bounceIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+
+    .hero-title {
+      font-family: 'Fredoka', Verdana, sans-serif;
+      font-weight: 700;
+      font-size: clamp(28px, 6vw, 48px);
+      color: var(--mauve);
+      margin: 16px 0 0;
+      animation: bounceIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+    }
+
+    .hero-title span {
+      display: inline-block;
+    }
+
+    .hero-title .amp {
+      color: var(--cherry);
+      font-size: 0.8em;
+      margin: 0 2px;
+    }
+
+    /* Speech bubble tagline */
+    .speech-bubble {
+      position: relative;
+      display: inline-block;
+      background: var(--white);
+      border-radius: 20px;
+      padding: 14px 28px;
+      margin-top: 16px;
+      box-shadow: 0 4px 16px rgba(157, 129, 137, 0.15);
+      font-size: 14px;
+      color: var(--dark);
+      line-height: 1.5;
+      max-width: 480px;
+      animation: bounceIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s both;
+    }
+
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 14px solid transparent;
+      border-right: 14px solid transparent;
+      border-bottom: 14px solid var(--white);
+    }
+
+    @keyframes bounceIn {
+      0% { opacity: 0; transform: scale(0.3) translateY(30px); }
+      50% { opacity: 1; }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    /* ============ SECTION HEADERS ============ */
+    .section-header {
+      font-family: 'Fredoka', Verdana, sans-serif;
+      font-weight: 700;
+      font-size: 26px;
+      color: var(--mauve);
+      text-align: center;
+      margin: 40px 0 20px;
+      position: relative;
+    }
+
+    .section-header::before,
+    .section-header::after {
+      content: '';
+      display: inline-block;
+      width: 40px;
+      height: 3px;
+      background: var(--cherry);
+      border-radius: 3px;
+      vertical-align: middle;
+      margin: 0 12px;
+    }
+
+    /* ============ TEAM CARDS ============ */
+    .team-row {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 0 20px 10px;
+      flex-wrap: wrap;
+      perspective: 800px;
+    }
+
+    .team-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 28px 24px 22px;
+      width: 280px;
+      position: relative;
+      box-shadow: 0 6px 20px rgba(157, 129, 137, 0.15);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      opacity: 0;
+      animation: cardSlide 0.5s ease forwards;
+    }
+
+    .team-card:nth-child(1) {
+      transform: rotate(-2deg);
+      animation-delay: 0.3s;
+    }
+
+    .team-card:nth-child(2) {
+      transform: rotate(1.5deg);
+      animation-delay: 0.45s;
+    }
+
+    .team-card:hover {
+      transform: rotate(0deg) translateY(-6px) scale(1.03);
+      box-shadow: 0 10px 30px rgba(157, 129, 137, 0.22);
+    }
+
+    @keyframes cardSlide {
+      0% { opacity: 0; transform: translateY(40px) rotate(0deg); }
+      100% { opacity: 1; }
+    }
+
+    /* tape strip on card */
+    .tape {
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-2deg);
+      width: 70px;
+      height: 18px;
+      background: rgba(255, 202, 212, 0.6);
+      border-radius: 2px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    .team-card:nth-child(2) .tape {
+      transform: translateX(-50%) rotate(3deg);
+      background: rgba(255, 229, 217, 0.7);
+    }
+
+    .card-name {
+      font-family: 'Fredoka', Verdana, sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      color: var(--mauve);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .card-role {
+      text-align: center;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--cherry);
+      margin-bottom: 14px;
+    }
+
+    .card-facts {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card-facts li {
+      font-size: 13px;
+      color: var(--dark);
+      line-height: 1.5;
+      padding: 6px 0;
+      border-bottom: 1px dashed rgba(157, 129, 137, 0.15);
+    }
+
+    .card-facts li:last-child {
+      border-bottom: none;
+    }
+
+    .card-facts li strong {
+      color: var(--cherry);
+    }
+
+    .card-badge {
+      display: block;
+      margin: 14px auto 0;
+      width: fit-content;
+      padding: 5px 16px;
+      border-radius: 50px;
+      font-family: 'Fredoka', Verdana, sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      color: white;
+    }
+
+    .badge-elle {
+      background: linear-gradient(135deg, #4db6ac, #80cbc4);
+    }
+
+    .badge-norah {
+      background: linear-gradient(135deg, #64b5f6, #90caf9);
+    }
+
+    /* ============ FUN FACT ============ */
+    .fact-section {
+      display: flex;
+      justify-content: center;
+      padding: 10px 20px 0;
+    }
+
+    .sticky-note {
+      background: var(--powder);
+      width: 380px;
+      max-width: 90vw;
+      padding: 24px 26px 20px;
+      border-radius: 4px 4px 4px 20px;
+      position: relative;
+      box-shadow:
+        3px 3px 0 rgba(157, 129, 137, 0.12),
+        0 8px 20px rgba(157, 129, 137, 0.1);
+      transform: rotate(1deg);
+      transition: transform 0.3s ease;
+      animation: bounceIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s both;
+    }
+
+    .sticky-note:hover {
+      transform: rotate(0deg) scale(1.02);
+    }
+
+    .sticky-note::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--cherry);
+      border-radius: 4px 4px 0 0;
+    }
+
+    .sticky-label {
+      font-family: 'Fredoka', Verdana, sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--mauve);
+      margin-bottom: 8px;
+    }
+
+    .sticky-text {
+      font-size: 14px;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .fact-refresh {
+      display: inline-block;
+      margin-top: 10px;
+      font-family: 'Fredoka', Verdana, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--mauve);
+      background: none;
+      border: 1.5px dashed var(--cherry);
+      border-radius: 50px;
+      padding: 4px 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .fact-refresh:hover {
+      background: var(--cherry);
+      color: white;
+      border-color: var(--cherry);
+    }
+
+    /* ============ DOG GALLERY ============ */
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      padding: 0 20px 10px;
+      flex-wrap: wrap;
+    }
+
+    .polaroid {
+      background: white;
+      padding: 10px 10px 36px;
+      border-radius: 4px;
+      box-shadow: 0 4px 16px rgba(157, 129, 137, 0.18);
+      position: relative;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      opacity: 0;
+      animation: cardSlide 0.5s ease forwards;
+    }
+
+    .polaroid:nth-child(1) {
+      transform: rotate(-3deg);
+      animation-delay: 0.5s;
+    }
+
+    .polaroid:nth-child(2) {
+      transform: rotate(1.5deg);
+      animation-delay: 0.65s;
+    }
+
+    .polaroid:nth-child(3) {
+      transform: rotate(-1deg);
+      animation-delay: 0.8s;
+    }
+
+    .polaroid:hover {
+      transform: rotate(0deg) scale(1.06) translateY(-8px);
+      box-shadow: 0 12px 32px rgba(157, 129, 137, 0.25);
+      z-index: 2;
+    }
+
+    .polaroid img {
+      width: 240px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 2px;
+      display: block;
+    }
+
+    .polaroid-caption {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: 'Fredoka', Verdana, sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      color: var(--mauve);
+    }
+
+    /* tape on polaroids */
+    .polaroid .tape {
+      top: -6px;
+      width: 50px;
+      height: 14px;
+    }
+
+    .polaroid:nth-child(1) .tape { transform: translateX(-50%) rotate(5deg); }
+    .polaroid:nth-child(2) .tape { transform: translateX(-50%) rotate(-3deg); }
+    .polaroid:nth-child(3) .tape { transform: translateX(-50%) rotate(2deg); }
+
+    /* ============ EXPLORE ============ */
+    .explore-row {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      padding: 0 20px 50px;
+      flex-wrap: wrap;
+    }
+
+    .explore-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: var(--white);
+      width: 180px;
+      padding: 24px 16px;
+      border-radius: 20px;
+      box-shadow: 0 4px 14px rgba(157, 129, 137, 0.14);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      border: 2.5px solid transparent;
+      opacity: 0;
+      animation: cardSlide 0.5s ease forwards;
+    }
+
+    .explore-card:nth-child(1) { animation-delay: 0.7s; }
+    .explore-card:nth-child(2) { animation-delay: 0.8s; }
+    .explore-card:nth-child(3) { animation-delay: 0.9s; }
+
+    .explore-card:hover {
+      transform: translateY(-6px) scale(1.04);
+      border-color: var(--cherry);
+      box-shadow: 0 8px 24px rgba(244, 172, 183, 0.3);
+    }
+
+    .explore-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .icon-about { background: linear-gradient(135deg, var(--pastel), var(--cherry)); }
+    .icon-fun { background: linear-gradient(135deg, var(--powder), var(--pastel)); }
+    .icon-contact { background: linear-gradient(135deg, var(--cherry), var(--mauve)); }
+
+    .explore-label {
+      font-family: 'Fredoka', Verdana, sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--mauve);
+      margin-bottom: 3px;
+    }
+
+    .explore-desc {
+      font-size: 11px;
+      color: #b8a0a7;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      text-align: center;
+      padding: 0 20px 30px;
+      font-size: 12px;
+      color: var(--mauve);
+      opacity: 0.6;
+    }
+
+    /* ============ WOBBLE EFFECT ============ */
+    @keyframes wobble {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-1.5deg); }
+      75% { transform: rotate(1.5deg); }
+    }
+
+    .hero-title:hover {
+      animation: wobble 0.4s ease;
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 640px) {
+      .team-card { width: 100%; max-width: 340px; }
+      .polaroid img { width: 200px; height: 150px; }
+      .explore-card { width: 140px; padding: 18px 12px; }
+      .explore-icon { width: 44px; height: 44px; font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <a href="elles_website.html" class="active">Home</a>
+  <a href="page1.html">About Us</a>
+  <a href="page2.html">Fun Stuff</a>
+  <a href="page3.html">Contact Me</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <img src="logo.svg" width="320" class="hero-logo">
+  <h1 class="hero-title">
+    <span>Elle</span>
+    <span class="amp">&</span>
+    <span>Norah</span>
+  </h1>
+  <div class="speech-bubble">
+    We're 10, we built this website, and no, we will not be taking questions at this time. Enjoy your stay.
+  </div>
+</section>
+
+<!-- Meet the Team -->
+<h2 class="section-header">Meet the Team</h2>
+<div class="team-row">
+
+  <div class="team-card">
+    <div class="tape"></div>
+    <div class="card-name">Elle</div>
+    <div class="card-role">Chief Pizza Officer</div>
+    <ul class="card-facts">
+      <li><strong>Sport:</strong> Soccer. Go the Matildas!</li>
+      <li><strong>Food:</strong> Pizza for every meal, including dessert</li>
+      <li><strong>Pet:</strong> Kobe the Cavoodle (90% fluff)</li>
+      <li><strong>Vibe:</strong> Gluten free and thriving</li>
+    </ul>
+    <span class="card-badge badge-elle">Teal queen</span>
+  </div>
+
+  <div class="team-card">
+    <div class="tape"></div>
+    <div class="card-name">Norah</div>
+    <div class="card-role">Head of Cartwheels</div>
+    <ul class="card-facts">
+      <li><strong>Sport:</strong> Dance + gymnastics (flippy things)</li>
+      <li><strong>Food:</strong> Pasta. Any shape. Any time.</li>
+      <li><strong>Dream:</strong> Adopt every puppy on the planet</li>
+      <li><strong>Vibe:</strong> Double the houses, double the fun</li>
+    </ul>
+    <span class="card-badge badge-norah">Baby blue crew</span>
+  </div>
+
+</div>
+
+<!-- Fun Fact -->
+<h2 class="section-header">Did You Know?</h2>
+<div class="fact-section">
+  <div class="sticky-note">
+    <div class="sticky-label">Random Fun Fact</div>
+    <div class="sticky-text" id="fact-text"></div>
+    <button class="fact-refresh" onclick="newFact()">Another one!</button>
+  </div>
+</div>
+
+<!-- Dog Tax -->
+<h2 class="section-header">Dog Tax</h2>
+<div class="gallery">
+  <div class="polaroid">
+    <div class="tape"></div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/YellowLabradorLooking_new.jpg/1200px-YellowLabradorLooking_new.jpg" alt="Good dog">
+    <div class="polaroid-caption">10/10 good boy</div>
+  </div>
+  <div class="polaroid">
+    <div class="tape"></div>
+    <img src="https://placedog.net/400/300" alt="Random dog">
+    <div class="polaroid-caption">certified cutie</div>
+  </div>
+  <div class="polaroid">
+    <div class="tape"></div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Cute_dog.jpg/1200px-Cute_dog.jpg" alt="Cute dog">
+    <div class="polaroid-caption">would boop again</div>
+  </div>
+</div>
+
+<!-- Explore -->
+<h2 class="section-header">Explore</h2>
+<div class="explore-row">
+  <a href="page1.html" class="explore-card">
+    <div class="explore-icon icon-about">&#128075;</div>
+    <div class="explore-label">About Us</div>
+    <div class="explore-desc">Who we are (and why we're great)</div>
+  </a>
+  <a href="page2.html" class="explore-card">
+    <div class="explore-icon icon-fun">&#11088;</div>
+    <div class="explore-label">Fun Stuff</div>
+    <div class="explore-desc">Jokes, faves, and Kobe updates</div>
+  </a>
+  <a href="page3.html" class="explore-card">
+    <div class="explore-icon icon-contact">&#9993;</div>
+    <div class="explore-label">Contact</div>
+    <div class="explore-desc">Say hi (be nice though)</div>
+  </a>
+</div>
+
+<footer>Made with zero adult supervision. Elle & Norah, 2026.</footer>
+
+<script>
+  var facts = [
+    "Elle's dog Kobe is 90% hair and 10% body. Scientists are baffled.",
+    "Norah has never met a puppy she didn't immediately try to take home.",
+    "Elle could eat pizza for breakfast, lunch, dinner, AND dessert. Don't test her.",
+    "Norah can do a cartwheel anywhere. Supermarket? Yes. Church? Probably.",
+    "Elle's favourite colours are teal and green, but her website is pink. Logic is optional.",
+    "Between them they have 4 brothers. That's 4 too many, according to them.",
+    "Norah's pasta intake could power a small country.",
+    "Elle is coeliac, so everything is gluten free. And yes, GF pizza still slaps.",
+    "They are both in grade 5. Basically running the school at this point.",
+    "Kobe the Cavoodle thinks he runs the house. He's not wrong."
+  ];
+
+  var lastIndex = -1;
+
+  function newFact() {
+    var idx;
+    do { idx = Math.floor(Math.random() * facts.length); } while (idx === lastIndex);
+    lastIndex = idx;
+    var el = document.getElementById('fact-text');
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(6px)';
+    setTimeout(function() {
+      el.textContent = facts[idx];
+      el.style.transition = 'all 0.3s ease';
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, 150);
+  }
+
+  newFact();
+</script>
+
+</body>
+</html>

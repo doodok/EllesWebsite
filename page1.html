@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Wonder Paws</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #d8e2dc;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 36'%3E%3Cellipse cx='16' cy='24' rx='6' ry='7' fill='white' opacity='0.45'/%3E%3Ccircle cx='6' cy='12' r='3' fill='white' opacity='0.45'/%3E%3Ccircle cx='12' cy='8' r='2.8' fill='white' opacity='0.45'/%3E%3Ccircle cx='20' cy='8' r='2.8' fill='white' opacity='0.45'/%3E%3Ccircle cx='26' cy='12' r='3' fill='white' opacity='0.45'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 36'%3E%3Cellipse cx='16' cy='24' rx='6' ry='7' fill='%23f4acb7' opacity='0.35'/%3E%3Ccircle cx='6' cy='12' r='3' fill='%23f4acb7' opacity='0.35'/%3E%3Ccircle cx='12' cy='8' r='2.8' fill='%23f4acb7' opacity='0.35'/%3E%3Ccircle cx='20' cy='8' r='2.8' fill='%23f4acb7' opacity='0.35'/%3E%3Ccircle cx='26' cy='12' r='3' fill='%23f4acb7' opacity='0.35'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 36'%3E%3Cellipse cx='16' cy='24' rx='6' ry='7' fill='white' opacity='0.45'/%3E%3Ccircle cx='6' cy='12' r='3' fill='white' opacity='0.45'/%3E%3Ccircle cx='12' cy='8' r='2.8' fill='white' opacity='0.45'/%3E%3Ccircle cx='20' cy='8' r='2.8' fill='white' opacity='0.45'/%3E%3Ccircle cx='26' cy='12' r='3' fill='white' opacity='0.45'/%3E%3C/svg%3E");
+      background-size: 70px 79px, 100px 113px, 160px 180px;
+      background-position: 0 0, 40px 40px, 100px 20px;
+      animation: pawDrift 3s infinite alternate;
+      font-family: Verdana, sans-serif;
+    }
+
+    @keyframes pawDrift {
+      0% { background-position: 0 0, 40px 40px, 100px 20px; }
+      50% { background-position: 10px 10px, 50px 30px, 90px 30px; }
+      100% { background-position: 0 0, 40px 40px, 100px 20px; }
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      padding: 14px 20px;
+      background: #9d8189;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-family: 'Fredoka', Verdana, sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #ffe5d9;
+      text-decoration: none;
+      padding: 7px 18px;
+      border-radius: 50px;
+      transition: all 0.25s ease;
+    }
+
+    nav a:hover { background: rgba(255,255,255,0.15); transform: scale(1.06); }
+    nav a.active { background: #f4acb7; color: white; }
+
+    h1 {
+      text-align: center;
+      color: #9d8189;
+      font-family: 'Fredoka', Verdana, sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      margin: 24px 0 8px;
+    }
+
+    .about-card {
+      max-width: 500px;
+      margin: 20px auto;
+      background-color: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      color: #333;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .fact { margin: 10px 0; }
+    .label { color: #f4acb7; font-weight: bold; }
+
+    /* ---- Toggle ---- */
+    .toggle-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 8px auto 24px;
+    }
+
+    .toggle {
+      display: inline-flex;
+      align-items: center;
+      background: white;
+      border-radius: 50px;
+      padding: 5px;
+      box-shadow: 0 4px 14px rgba(157, 129, 137, 0.18);
+      position: relative;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      top: 5px;
+      height: calc(100% - 10px);
+      background: linear-gradient(135deg, #f4acb7, #ffcad4);
+      border-radius: 50px;
+      transition: left 0.45s cubic-bezier(0.68, -0.3, 0.265, 1.3),
+                  width 0.45s cubic-bezier(0.68, -0.3, 0.265, 1.3);
+      z-index: 1;
+      box-shadow: 0 2px 8px rgba(244, 172, 183, 0.35);
+    }
+
+    .toggle-btn {
+      padding: 10px 26px;
+      font-family: 'Fredoka', Verdana, sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: #9d8189;
+      position: relative;
+      z-index: 2;
+      transition: color 0.3s ease, transform 0.2s ease;
+      white-space: nowrap;
+      border-radius: 50px;
+    }
+
+    .toggle-btn.active { color: white; }
+    .toggle-btn:hover:not(.active) { color: #f4acb7; transform: scale(1.04); }
+    .toggle-btn:active { transform: scale(0.97); }
+
+    .person-content { display: none; }
+    .person-content.active { display: block; animation: popIn 0.4s ease forwards; }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: translateY(14px) scale(0.97); }
+      55% { opacity: 1; transform: translateY(-4px) scale(1.005); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 12px;
+      color: #9d8189;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="elles_website.html">Home</a>
+  <a href="page1.html" class="active">About Us</a>
+  <a href="page2.html">Fun Stuff</a>
+  <a href="page3.html">Contact Me</a>
+</nav>
+
+<h1>About Us</h1>
+
+<!-- Toggle -->
+<div class="toggle-wrap">
+  <div class="toggle" id="toggle">
+    <div class="toggle-slider" id="slider"></div>
+    <button class="toggle-btn active" id="btn-elle" onclick="switchTo('elle')">Elle</button>
+    <button class="toggle-btn" id="btn-norah" onclick="switchTo('norah')">Norah</button>
+  </div>
+</div>
+
+<!-- Elle -->
+<div id="content-elle" class="person-content active">
+  <div class="about-card">
+    <div class="fact"><span class="label">Name:</span> Elle (yes, like the letter L, but cooler)</div>
+    <div class="fact"><span class="label">Age:</span> 10 years old and already running the world</div>
+    <div class="fact"><span class="label">Grade:</span> 5 (basically a senior citizen of primary school)</div>
+    <div class="fact"><span class="label">Favourite colours:</span> Teal and green (yes this whole website is pink, don't question it)</div>
+    <div class="fact"><span class="label">Favourite food:</span> Pizza. I could eat it for breakfast, lunch, and dinner. And also dessert.</div>
+    <div class="fact"><span class="label">Favourite animals:</span> Dogs and lions. One licks your face, the other one would eat it.</div>
+    <div class="fact"><span class="label">Hobbies:</span> Soccer, sports, and pretending my brothers don't exist</div>
+    <div class="fact"><span class="label">Fun fact:</span> I'm coeliac, which means I eat gluten free. Yes, gluten free pizza exists and yes, it's still amazing.</div>
+    <div class="fact"><span class="label">Family:</span> Two little brothers. They are annoying. That's it. That's the fact.</div>
+  </div>
+</div>
+
+<!-- Norah -->
+<div id="content-norah" class="person-content">
+  <div class="about-card">
+    <div class="fact"><span class="label">Name:</span> Norah (rhymes with explorer, which is basically what she is)</div>
+    <div class="fact"><span class="label">Age:</span> 10 years old and already bossing it</div>
+    <div class="fact"><span class="label">Grade:</span> 5 (surviving primary school one homework sheet at a time)</div>
+    <div class="fact"><span class="label">Favourite colour:</span> Baby blue (finally someone on this website who isn't obsessed with pink)</div>
+    <div class="fact"><span class="label">Favourite food:</span> Pasta. Any shape, any sauce, any time of day. If it's carbs, she's in.</div>
+    <div class="fact"><span class="label">Favourite animal:</span> Puppies. All of them. Every single one. She has never met a puppy she didn't want to take home.</div>
+    <div class="fact"><span class="label">Hobbies:</span> Dance and gymnastics. Basically if it involves flipping, spinning, or looking graceful, she's there.</div>
+    <div class="fact"><span class="label">Fun fact:</span> Her parents are divorced, which means she gets two of everything. Two houses, two Christmases, double the birthday cake. Honestly? Not a bad deal.</div>
+    <div class="fact"><span class="label">Family:</span> 2 mums, 2 dads, 2 brothers. She's basically running a small village at this point.</div>
+  </div>
+</div>
+
+<footer>Made with zero adult supervision. Elle & Norah, 2026.</footer>
+
+<script>
+  function switchTo(person) {
+    document.querySelectorAll('.toggle-btn').forEach(function(btn) {
+      btn.classList.remove('active');
+    });
+    document.getElementById('btn-' + person).classList.add('active');
+
+    var activeBtn = document.getElementById('btn-' + person);
+    var slider = document.getElementById('slider');
+    slider.style.left = activeBtn.offsetLeft + 'px';
+    slider.style.width = activeBtn.offsetWidth + 'px';
+
+    document.querySelectorAll('.person-content').forEach(function(c) {
+      c.classList.remove('active');
+    });
+    document.getElementById('content-' + person).classList.add('active');
+  }
+
+  window.addEventListener('load', function() {
+    var activeBtn = document.querySelector('.toggle-btn.active');
+    var slider = document.getElementById('slider');
+    slider.style.left = activeBtn.offsetLeft + 'px';
+    slider.style.width = activeBtn.offsetWidth + 'px';
+  });
+</script>
+
+</body>
+</html>

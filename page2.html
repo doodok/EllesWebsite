@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fun Stuff | Wonder Paws</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #d8e2dc;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 36'%3E%3Cellipse cx='16' cy='24' rx='6' ry='7' fill='white' opacity='0.45'/%3E%3Ccircle cx='6' cy='12' r='3' fill='white' opacity='0.45'/%3E%3Ccircle cx='12' cy='8' r='2.8' fill='white' opacity='0.45'/%3E%3Ccircle cx='20' cy='8' r='2.8' fill='white' opacity='0.45'/%3E%3Ccircle cx='26' cy='12' r='3' fill='white' opacity='0.45'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 36'%3E%3Cellipse cx='16' cy='24' rx='6' ry='7' fill='%23f4acb7' opacity='0.35'/%3E%3Ccircle cx='6' cy='12' r='3' fill='%23f4acb7' opacity='0.35'/%3E%3Ccircle cx='12' cy='8' r='2.8' fill='%23f4acb7' opacity='0.35'/%3E%3Ccircle cx='20' cy='8' r='2.8' fill='%23f4acb7' opacity='0.35'/%3E%3Ccircle cx='26' cy='12' r='3' fill='%23f4acb7' opacity='0.35'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 36'%3E%3Cellipse cx='16' cy='24' rx='6' ry='7' fill='white' opacity='0.45'/%3E%3Ccircle cx='6' cy='12' r='3' fill='white' opacity='0.45'/%3E%3Ccircle cx='12' cy='8' r='2.8' fill='white' opacity='0.45'/%3E%3Ccircle cx='20' cy='8' r='2.8' fill='white' opacity='0.45'/%3E%3Ccircle cx='26' cy='12' r='3' fill='white' opacity='0.45'/%3E%3C/svg%3E");
+      background-size: 70px 79px, 100px 113px, 160px 180px;
+      background-position: 0 0, 40px 40px, 100px 20px;
+      animation: pawDrift 3s infinite alternate;
+      font-family: Verdana, sans-serif;
+    }
+
+    @keyframes pawDrift {
+      0% { background-position: 0 0, 40px 40px, 100px 20px; }
+      50% { background-position: 10px 10px, 50px 30px, 90px 30px; }
+      100% { background-position: 0 0, 40px 40px, 100px 20px; }
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      padding: 14px 20px;
+      background: #9d8189;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-family: 'Fredoka', Verdana, sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #ffe5d9;
+      text-decoration: none;
+      padding: 7px 18px;
+      border-radius: 50px;
+      transition: all 0.25s ease;
+    }
+
+    nav a:hover { background: rgba(255,255,255,0.15); transform: scale(1.06); }
+    nav a.active { background: #f4acb7; color: white; }
+
+    h1, h2 {
+      text-align: center;
+      color: #9d8189;
+      font-family: 'Fredoka', Verdana, sans-serif;
+      font-weight: 700;
+    }
+
+    h1 { font-size: 28px; margin: 24px 0 8px; }
+    h2 { font-size: 22px; margin: 24px 0 8px; }
+
+    .section {
+      max-width: 550px;
+      margin: 20px auto;
+      background-color: white;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      color: #333;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .label { color: #f4acb7; font-weight: bold; }
+
+    .joke {
+      margin: 15px 0;
+      padding: 10px;
+      background-color: #ffe5d9;
+      border-radius: 10px;
+    }
+
+    .joke-q { color: #9d8189; font-weight: bold; }
+    .joke-a { color: #333; font-style: italic; }
+    .fav-item { margin: 8px 0; }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 12px;
+      color: #9d8189;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="elles_website.html">Home</a>
+  <a href="page1.html">About Us</a>
+  <a href="page2.html" class="active">Fun Stuff</a>
+  <a href="page3.html">Contact Me</a>
+</nav>
+
+<h1>Fun Stuff</h1>
+
+<h2>Meet Kobe</h2>
+<div class="section">
+  <p><span class="label">Species:</span> Toy Cavoodle (a.k.a. professional cuteness machine)</p>
+  <p><span class="label">Colour:</span> Black, like a tiny fluffy shadow</p>
+  <p><span class="label">Personality:</span> Small, cheeky, mischievous, and very very cute. He thinks he runs the house. He's not wrong.</p>
+  <p><span class="label">Body type:</span> 90% hair, 10% body</p>
+  <p><span class="label">Hobbies:</span> Going on walks and eating. That's it. That's the whole dog.</p>
+</div>
+
+<h2>Soccer</h2>
+<div class="section">
+  <p><span class="label">Favourite team:</span> The Matildas! Go the green and gold!</p>
+  <p><span class="label">Favourite player:</span> Sam Kerr. Absolute legend. If you know, you know.</p>
+</div>
+
+<h2>My Favourites</h2>
+<div class="section">
+  <div class="fav-item"><span class="label">Movies:</span> The Princess Switch 1 and 2 (Vanessa Hudgens x3, what's not to love?)</div>
+  <div class="fav-item"><span class="label">Song:</span> Roar by Katy Perry (because I am a champion and you're gonna hear me ROAR)</div>
+  <div class="fav-item"><span class="label">YouTube:</span> SSSniperWolf... just kidding. Saelish Matter!</div>
+</div>
+
+<h2>Joke Corner</h2>
+<div class="section">
+  <div class="joke">
+    <p class="joke-q">Q: What has lots of teeth but does not bite?</p>
+    <p class="joke-a">A: A comb!</p>
+  </div>
+  <div class="joke">
+    <p class="joke-q">Q: Why don't scientists trust atoms?</p>
+    <p class="joke-a">A: Because they make up everything!</p>
+  </div>
+  <div class="joke">
+    <p class="joke-q">Q: What do you call a dog that does magic tricks?</p>
+    <p class="joke-a">A: A Labracadabrador!</p>
+  </div>
+  <div class="joke">
+    <p class="joke-q">Q: Why did the soccer ball go to the library?</p>
+    <p class="joke-a">A: Because it wanted to be kicked around by someone smart!</p>
+  </div>
+</div>
+
+<footer>Made with zero adult supervision. Elle & Norah, 2026.</footer>
+
+</body>
+</html>
